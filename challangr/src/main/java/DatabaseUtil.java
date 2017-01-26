@@ -103,13 +103,14 @@ public class DatabaseUtil {
     }
   }
 
-  public static int insertIntoChallenges(Challenge challenge) throws SQLException {
-    String sql = "INSERT INTO challenge (TITLE, DESCRIPTION, SAMPLE, DIFFICULTY_ID) VALUES (?, ?, ?, ?)";
+  public static int insertIntoReplys(Reply reply) throws SQLException {
+    String sql = "INSERT INTO reply (USER_ID, CHALLENGE_ID, CODE_LANGUAGE_ID, REPLY, SCORE) VALUES (?, ?, ?, ?, ?)";
     PreparedStatement preparedStatement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
-    preparedStatement.setString(1, challenge.getTitle());
-    preparedStatement.setString(2, challenge.getDescription());
-    preparedStatement.setString(3, challenge.getSample());
-    preparedStatement.setInt(4, challenge.getDifficultyId());
+    preparedStatement.setInt(1, reply.getUserId());
+    preparedStatement.setInt(2, reply.getChallengeId());
+    preparedStatement.setInt(3, reply.getCodeLanguageId().getCode());
+    preparedStatement.setString(4, reply.getReply());
+    preparedStatement.setInt(4, reply.getScore());
     int result = 0;
     if (preparedStatement.executeUpdate() == 1) {
       ResultSet rs = preparedStatement.getGeneratedKeys();
@@ -117,18 +118,18 @@ public class DatabaseUtil {
       result = rs.getInt("ID");
     }
 
-    System.out.println("Challenge created with id: " + result);
+    System.out.println("Reply created with id: " + result);
     return result;
   }
 
-  public static Reply selectFromChallenges(int replyId) throws SQLException {
+  public static Reply selectFromReplys(int replyId) throws SQLException {
     String sql = "SELECT * FROM challenge WHERE id = ?";
     PreparedStatement preparedStatement = connection.prepareStatement(sql);
-    preparedStatement.setInt(1, challengeId);
+    preparedStatement.setInt(1, replyId);
     ResultSet rs = preparedStatement.executeQuery();
     if (rs.next()) {
-      Challenge challenge = new Challenge(rs.getString("TITLE"), rs.getString("DESCRIPTION"), rs.getString("SAMPLE"), rs.getInt("DIFFICULTY_ID"));
-      return challenge;
+      Reply reply = new Reply(rs.getInt("USER_ID"), rs.getInt("CHALLENGE_ID"), ProgrammingLanguage.getInstance(rs.getInt("CODE_LANGUAGE_ID")), rs.getString("REPLY"), rs.getInt("SCORE"));
+      return reply;
     } else {
       return null;
     }

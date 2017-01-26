@@ -9,9 +9,21 @@ public class Reply {
 
   private int challengeId;
 
-  private ProgrammingLanguage programmingLanguage;
+  private ProgrammingLanguage codeLanguageId;
 
   private String reply;
+
+  public Reply() {
+
+  }
+
+  public Reply(int userId, int challengeId, ProgrammingLanguage codeLanguageId, String reply, int score) {
+    this.userId = userId;
+    this.challengeId = challengeId;
+    this.codeLanguageId = codeLanguageId;
+    this.reply = reply;
+    this.score = score;
+  }
 
   public int getId() {
     return id;
@@ -37,12 +49,12 @@ public class Reply {
     this.challengeId = challengeId;
   }
 
-  public ProgrammingLanguage getProgrammingLanguage() {
-    return programmingLanguage;
+  public ProgrammingLanguage getCodeLanguageId() {
+    return codeLanguageId;
   }
 
-  public void setProgrammingLanguage(ProgrammingLanguage programmingLanguage) {
-    this.programmingLanguage = programmingLanguage;
+  public void setCodeLanguageId(ProgrammingLanguage codeLanguageId) {
+    this.codeLanguageId = codeLanguageId;
   }
 
   public String getReply() {
