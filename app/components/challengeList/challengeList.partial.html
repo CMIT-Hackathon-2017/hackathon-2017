@@ -1,0 +1,6 @@
+<div class="row challenge-list" ng-repeat="challenge in $ctrl.challengeList">
+    <div class="column shrink"># {{challenge.id}}</div>
+    <div class="column" ng-bind="::challenge.title"></div>
+    <div class="column" ng-bind="::challenge.difficulty"></div>
+    <div class="column" ng-bind="::challenge.status"></div>
+</div>
