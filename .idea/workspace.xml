@@ -2,41 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1d847c58-ab40-40ad-b98a-792538fbbaac" name="Default" comment="fjdijpof">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/components/challengeList/challengeList.component.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/components/challengeList/challengeList.controller.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/components/challengeList/challengeList.partial.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/components/pages/challengeOverviewPage.controller.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/components/pages/challengeOverviewPage.partial.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/components/pages/challengePage.controller.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/components/pages/challengePage.partial.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/css/app.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/css/foundation.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/css/foundation.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/js/ace.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/js/vendor/foundation.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/js/vendor/foundation.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/js/vendor/jquery.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/js/vendor/what-input.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/challangr/challangr.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/challangr/src/main/java/Challenge.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/challangr/src/main/java/DatabaseUtil.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/challangr/src/main/java/Event.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/challangr/src/main/java/ProgrammingLanguage.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/challangr/src/main/java/Reply.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/challangr/src/main/java/Test.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/challangr/src/main/java/TestMain.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/challangr/src/main/java/testing/Solution.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/challangr/src/main/java/testing/SolutionTest.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/app.css" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.js" afterPath="$PROJECT_DIR$/app/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/components/loginComponent/login.component.js" afterPath="$PROJECT_DIR$/app/components/loginComponent/login.component.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/components/loginComponent/login.controller.js" afterPath="$PROJECT_DIR$/app/components/loginComponent/login.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/components/loginComponent/login.partial.html" afterPath="$PROJECT_DIR$/app/components/loginComponent/login.partial.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/components/pages/loginPage.controller.js" afterPath="$PROJECT_DIR$/app/components/pages/loginPage.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/index.html" afterPath="$PROJECT_DIR$/app/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/challangr/challangr.iml" afterPath="$PROJECT_DIR$/challangr/challangr.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/challangr/pom.xml" afterPath="$PROJECT_DIR$/challangr/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/challangr/src/main/java/TestMain.java" afterPath="$PROJECT_DIR$/challangr/src/main/java/TestMain.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/challangr/src/main/java/User.java" afterPath="$PROJECT_DIR$/challangr/src/main/java/User.java" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -910,7 +879,7 @@
       <workItem from="1485433431094" duration="549000" />
       <workItem from="1485434469963" duration="100000" />
       <workItem from="1485436242990" duration="18969000" />
-      <workItem from="1485466184483" duration="254000" />
+      <workItem from="1485466184483" duration="355000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1485429553438</created>
@@ -947,11 +916,18 @@
       <option name="project" value="LOCAL" />
       <updated>1485453832670</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="fjdijpof">
+      <created>1485466455923</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1485466455923</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23584000" />
+    <option name="totallyTimeSpent" value="23685000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />

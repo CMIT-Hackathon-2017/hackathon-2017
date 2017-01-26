@@ -1,8 +1,4 @@
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
 
 /**
  * Created by tamara on 26/01/2017.
