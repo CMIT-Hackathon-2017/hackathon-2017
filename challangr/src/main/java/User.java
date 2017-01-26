@@ -36,4 +36,9 @@ public class User {
     this.email = email;
   }
 
+  @Override
+  public String toString() {
+    return "ID: " + id + ", Name: " + name + ", Email: " + email;
+  }
+
 }
