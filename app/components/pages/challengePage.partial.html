@@ -1,0 +1,11 @@
+<h1 ng-bind-html="$ctrl.mockChallenge.title"></h1>
+
+<div ng-bind="$ctrl.mockChallenge.description"></div>
+
+<div ng-bind="$ctrl.mockChallenge.example"></div>
+
+<div class="button">Clear input</div>
+
+<select ng-options="language as language for language in mockChallenge.languages track by language" ng-model="$ctrl.language" ng-change="$ctrl.setLanguage($ctrl.language)"></select>
+
+<div id="editor">some text</div>

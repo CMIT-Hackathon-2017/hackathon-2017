@@ -6,7 +6,7 @@ angular.module('challengR.challengeList.controller', ['ngRoute'])
     function($location) {
         var ctrl = this;
 
-        ctrl.challengeList = [
+        ctrl.mockChallengeList = [
             {id: 1, title: 'some name', difficulty: 'easy', status: 'Not completed'},
             {id: 2, title: 'some name', difficulty: 'hard', status: 'completed'},
             {id: 3, title: 'some name', difficulty: 'easy', status: 'Not completed'},
@@ -18,5 +18,9 @@ angular.module('challengR.challengeList.controller', ['ngRoute'])
             {id: 9, title: 'some name', difficulty: 'easy', status: 'Not completed'},
             {id: 10, title: 'some name', difficulty: 'hard', status: 'completed'}
         ];
+
+        ctrl.openChallenge = function (challengeId) {
+            $location.url('/challenge/' + challengeId);
+        };
     }
 ]);

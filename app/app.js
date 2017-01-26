@@ -8,11 +8,10 @@ angular.module('challengR', [
     'challengR.loginPage.controller',
     'challengR.challengeOverviewPage.controller',
     'challengR.challengeList.controller',
-    'challengR.challengeList.component'
+    'challengR.challengeList.component',
+    'challengR.challengePage.controller'
 
 ]).
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
   $routeProvider.otherwise({redirectTo: '/login'});
 }]);
-
-//$(document).foundation();
