@@ -135,5 +135,35 @@ public class DatabaseUtil {
     }
   }
 
+  public static int insertIntoTests(Test test) throws SQLException {
+    String sql = "INSERT INTO test (DESCRIPTION, CODE_LANGUAGE_ID, TEST_CODE, CHALLENGE_ID) VALUES (?, ?, ?, ?)";
+    PreparedStatement preparedStatement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+    preparedStatement.setString(1, test.getDescription());
+    preparedStatement.setInt(2, test.getCodeLanguageId().getCode());
+    preparedStatement.setString(3, test.getTestCode());
+    preparedStatement.setInt(3, test.getChallengeId());
+    int result = 0;
+    if (preparedStatement.executeUpdate() == 1) {
+      ResultSet rs = preparedStatement.getGeneratedKeys();
+      rs.next();
+      result = rs.getInt("ID");
+    }
+
+    System.out.println("Test created with id: " + result);
+    return result;
+  }
+
+  public static Test selectFromTests(int eventId) throws SQLException {
+    String sql = "SELECT * FROM event WHERE id = ?";
+    PreparedStatement preparedStatement = connection.prepareStatement(sql);
+    preparedStatement.setInt(1, eventId);
+    ResultSet rs = preparedStatement.executeQuery();
+    if (rs.next()) {
+      Test test = new Test(rs.getString("DESCRIPTION"), ProgrammingLanguage.getInstance(rs.getInt("CODE_LANGUAGE_ID")), rs.getString("TEST_CODE"), rs.getInt("CHALLENGE_ID"));
+      return test;
+    } else {
+      return null;
+    }
+  }
 
 }
