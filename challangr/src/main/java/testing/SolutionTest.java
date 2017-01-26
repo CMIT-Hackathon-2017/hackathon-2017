@@ -48,6 +48,8 @@ public class SolutionTest {
     long passed = outputPass.stream().filter(bool -> bool == true).count();
     System.out.println("Tests passed: " + passed + "/" + inputNumbers.size());
 
+    Result result = new Result((int) passed, inputNumbers.size());
+
   }
 
   private static boolean evaluateSolution(int[] expected, int[] real) {
