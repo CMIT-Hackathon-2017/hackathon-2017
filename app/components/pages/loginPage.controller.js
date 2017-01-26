@@ -10,6 +10,6 @@ angular.module('challengR.loginPage.controller', ['ngRoute'])
     });
 }])
 
-    .controller('LoginPageCtrl', [function() {
+.controller('LoginPageCtrl', [function() {
 
-    }]);
+}]);

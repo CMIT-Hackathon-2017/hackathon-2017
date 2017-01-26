@@ -2,10 +2,17 @@
 
 angular.module('challengR.login.controller', ['ngRoute'])
 
-.controller('LoginCtrl', [function() {
-    var ctrl = this;
+.controller('LoginCtrl', ['$location',
+    function($location) {
+        var ctrl = this;
 
-    this.doSignup = function () {
-        alert(ctrl.email);
-    };
-}]);
+        ctrl.doSignup = function () {
+            var userObj = {
+                email: ctrl.email,
+                name: ctrl.name
+            };
+
+            $location.url('/challenges');
+        };
+    }
+]);
