@@ -7,8 +7,11 @@ public class DatabaseUtil {
 
   private static Connection connection;
 
-  public static void makeConnection(String url, String username, String password) throws SQLException {
-    connection = DriverManager.getConnection(url, username, password);
+  public static Connection makeConnection(String url, String username, String password) throws SQLException {
+    if (connection == null) {
+      connection = DriverManager.getConnection(url, username, password);
+    }
+    return connection;
   }
 
   public static int insertIntoUsers(User user) throws SQLException {

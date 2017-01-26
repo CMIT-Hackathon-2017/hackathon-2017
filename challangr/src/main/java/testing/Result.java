@@ -5,6 +5,18 @@ package testing;
  */
 public class Result {
 
+  public int getTestsPassed() {
+    return testsPassed;
+  }
+
+  public int getTestsFailed() {
+    return testsFailed;
+  }
+
+  public boolean isPassedOverall() {
+    return passedOverall;
+  }
+
   private int testsPassed;
 
   private int testsFailed;

@@ -1,5 +1,10 @@
 package testing;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -48,7 +53,24 @@ public class SolutionTest {
     long passed = outputPass.stream().filter(bool -> bool == true).count();
     System.out.println("Tests passed: " + passed + "/" + inputNumbers.size());
 
-    Result result = new Result((int) passed, inputNumbers.size());
+
+
+    ObjectMapper mapper = new ObjectMapper();
+    Result obj = new Result((int) passed, inputNumbers.size());
+    try {
+      //Object to JSON in file
+      mapper.writeValue(new File("file.json"), obj);
+
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+
+    //Object to JSON in String
+    try {
+      System.out.println(mapper.writeValueAsString(obj));
+    } catch (JsonProcessingException e) {
+      e.printStackTrace();
+    }
 
   }
 
