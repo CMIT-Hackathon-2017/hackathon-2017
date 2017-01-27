@@ -3,6 +3,8 @@ package com.nordea.hackathon2017.utils;
 import com.nordea.hackathon2017.pojo.*;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by tamara on 26/01/2017.
@@ -184,6 +186,18 @@ public class DatabaseUtil {
     } else {
       return null;
     }
+  }
+
+  public static List<Challenge> selectAllChallenges() throws SQLException {
+    List<Challenge> result = new ArrayList();
+    String sql = "SELECT * FROM challenge";
+    PreparedStatement preparedStatement = connection.prepareStatement(sql);
+    ResultSet rs = preparedStatement.executeQuery();
+    while (rs.next()) {
+      Challenge challenge = new Challenge(rs.getString("TITLE"), rs.getString("DESCRIPTION"), rs.getString("SAMPLE"), rs.getInt("DIFFICULTY_ID"));
+      result.add(challenge);
+    }
+    return result;
   }
 
 }
