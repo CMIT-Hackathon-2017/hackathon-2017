@@ -17,13 +17,11 @@ angular.module('challengR.login.controller', ['ngRoute'])
                         "name": ctrl.name
                     }
                 }).then(function successCallback(response) {
-                    console.log('got successful response, storing user in sessionStorage:', response);
-
-                    sessionStorage.user = JSON.stringify(response);
+                    sessionStorage.user = JSON.stringify(response.data);
 
                     $location.url('/challenges');
                 }, function errorCallback(response) {
-                    console.log('error:', response);
+                    console.log('error:', response.status);
                 });
             } else {
                 console.log("invalid password");
