@@ -1,12 +1,12 @@
 <div class="row">
     <div class="column">
-        <h1 ng-bind="::$ctrl.mockChallenge.title"></h1>
+        <h1 ng-bind="::$ctrl.challenge.title"></h1>
     </div>
 </div>
 
 <div class="row">
     <div class="column">
-        <div ng-bind="::$ctrl.mockChallenge.description"></div>
+        <div ng-bind="::$ctrl.challenge.description"></div>
     </div>
 </div>
 
@@ -18,7 +18,7 @@
 
 <div class="row">
     <div class="column">
-        <div ng-bind="::$ctrl.mockChallenge.example"></div>
+        <div ng-bind="::$ctrl.challenge.example"></div>
     </div>
 </div>
 
@@ -27,13 +27,13 @@
         <select class="select select--filter"
                 ng-model="$ctrl.language"
                 ng-change="$ctrl.setLanguage();"
-                ng-options="language as language for language in $ctrl.mockChallenge.languages">
+                ng-options="language as language for language in $ctrl.challenge.languages">
             <option value="$ctrl.language"></option>
         </select>
     </div>
     <div class="column __float-left">
         <div class="button"
-             ng-click="$ctrl.setLanguage();">Clear input</div>
+             ng-click="$ctrl.setLanguage();">Start over</div>
     </div>
 </div>
 
@@ -47,5 +47,31 @@
     <div class="column right">
         <div class="button"
              ng-click="$ctrl.submitCode();">Submit code</div>
+    </div>
+</div>
+
+<div class="row" ng-if="$ctrl.displayResults">
+    <div class="column">
+        <div class="row">
+            <div class="column">
+                <div>Run code result:</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="column">
+                Your input:
+                <div ng-bind="$ctrl.userInput"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="column">
+                Your answer:
+                <div ng-bind="$ctrl.userAnswer"></div>
+            </div>
+            <div class="column">
+                Expected answer:
+                <div ng-bind="$ctrl.expectedAnswer"></div>
+            </div>
+        </div>
     </div>
 </div>

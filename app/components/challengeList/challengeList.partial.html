@@ -1,7 +1,6 @@
-<div class="row challenge-list" ng-repeat="challenge in $ctrl.mockChallengeList">
+<div class="row challenge-list" ng-repeat="challenge in $ctrl.challengeList">
     <div class="column shrink"># {{challenge.id}}</div>
     <a class="column" ng-bind="::challenge.title"
        ng-click="$ctrl.openChallenge(challenge.id)"></a>
     <div class="column" ng-bind="::challenge.difficulty"></div>
-    <div class="column" ng-bind="::challenge.status"></div>
 </div>
