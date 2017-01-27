@@ -1,6 +1,9 @@
 package com.nordea.hackathon2017.pojo;
 
-public class Challenge {
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.nordea.hackathon2017.pojo.Json;
+
+public class Challenge extends Json {
 
     private int id;
 
@@ -60,5 +63,15 @@ public class Challenge {
 
     public void setDifficultyId(int difficultyId) {
         this.difficultyId = difficultyId;
+    }
+
+    @Override
+    public String toString() {
+        try {
+            return mapper.writeValueAsString(this);
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+            return "{}";
+        }
     }
 }
