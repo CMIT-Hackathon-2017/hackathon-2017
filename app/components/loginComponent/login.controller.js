@@ -2,17 +2,26 @@
 
 angular.module('challengR.login.controller', ['ngRoute'])
 
-.controller('LoginCtrl', ['$location',
-    function($location) {
+.controller('LoginCtrl', ['$location', '$http',
+    function($location, $http) {
         var ctrl = this;
 
-        ctrl.doSignup = function () {
-            var userObj = {
-                email: ctrl.email,
-                name: ctrl.name
-            };
+        ctrl.verifyLogin = function () {
 
-            $location.url('/challenges');
+            if(ctrl.password === 'hack17') {
+                $http({
+                    method: 'POST',
+                    url: 'http://localhost:9080/rest/json/userEndPoint/post',
+                    data: {
+                        "email": ctrl.email,
+                        "name": ctrl.name
+                    }
+                }).then(function successCallback() {
+                    $location.url('/challenges');
+                }, function errorCallback(response) {
+                    console.log(response);
+                });
+            }
         };
     }
 ]);

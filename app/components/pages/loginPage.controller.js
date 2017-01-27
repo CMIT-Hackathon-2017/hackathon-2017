@@ -10,6 +10,5 @@ angular.module('challengR.loginPage.controller', ['ngRoute'])
     });
 }])
 
-.controller('LoginPageCtrl', [function() {
-
+.controller('LoginPageCtrl', ['$http', function($http) {
 }]);
