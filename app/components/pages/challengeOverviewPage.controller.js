@@ -12,9 +12,8 @@ angular.module('challengR.challengeOverviewPage.controller', ['ngRoute'])
 
 .controller('challengeOverviewPageCtrl', [function() {
 
-    var ctrl = this;
+    var ctrl = this,
+        user = JSON.parse(sessionStorage.user);
 
-    ctrl.user = JSON.parse(sessionStorage.user);
-
-    console.log(ctrl.user);
+    ctrl.welcomeMessage = 'Welcome to Nordea ChallengR, ' + user.name;
 }]);

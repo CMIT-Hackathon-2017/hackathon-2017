@@ -7,7 +7,6 @@ angular.module('challengR.login.controller', ['ngRoute'])
         var ctrl = this;
 
         ctrl.verifyLogin = function () {
-
             if(ctrl.password === 'hack17') {
                 $http({
                     method: 'POST',
