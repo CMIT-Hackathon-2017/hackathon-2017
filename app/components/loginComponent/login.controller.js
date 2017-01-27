@@ -21,7 +21,7 @@ angular.module('challengR.login.controller', ['ngRoute'])
 
                     $location.url('/challenges');
                 }, function errorCallback(response) {
-                    console.log('error:', response.status);
+                    console.log('error:', response);
                 });
             } else {
                 console.log("invalid password");
