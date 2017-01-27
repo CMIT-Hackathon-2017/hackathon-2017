@@ -17,14 +17,18 @@ angular.module('challengR.challengePage.controller', ['ngRoute'])
             cSharpMode,
             cppMode,
             phpMode,
-            pythonMode;
+            pythonMode,
+            editor;
 
         ctrl.mockChallenge = {
             title: '1. Problem',
             description: 'Given an array of integers, return indices of the two numbers such that they add up to a specific target. You may assume that each input would have exactly one solution.',
             example: 'Given nums = [2, 7, 11, 15], target = 9, Because nums[0] + nums[1] = 2 + 7 = 9, return [0, 1].',
             languages: ['Java', 'C#', 'Javascript', 'C++', 'PHP', 'Python'],
-            boilerPlateCode: ''
+            boilerplateCode: {
+                Java: 'import java.util.HashMap; import java.util.Map; public class Solution {public int[] twoSum(int[] numbers, int target) {Map<Integer, Integer> valueIndex = new HashMap<>();for(int i=0; i<numbers.length; i++) {if(valueIndex.containsKey(target-numbers[i])) {return new int[]{valueIndex.get(target-numbers[i]), i};}valueIndex.put(numbers[i], i);}return new int[]{-1,-1};}}',
+                Javascript: 'This is the Javascript boilerplate code'
+            }
         };
 
         $scope.$on('$destroy', function() {
@@ -32,7 +36,9 @@ angular.module('challengR.challengePage.controller', ['ngRoute'])
             editor && editor.container.remove();
         });
 
-        ctrl.setLanguage = function (language) {
+        ctrl.setLanguage = function () {
+            var language = ctrl.language;
+
             switch(language) {
             case 'Javascript':
                 editor.session.setMode(new javaScriptMode());
@@ -55,7 +61,17 @@ angular.module('challengR.challengePage.controller', ['ngRoute'])
             default:
                 editor.session.setMode(new javaMode());
             }
+
+            setBoilerPlateCode(language);
         };
+
+        function setBoilerPlateCode(language) {
+            var session = editor.getSession();
+            var jsbOpts = {
+                indent_size : 4
+            };
+            session.setValue(js_beautify(ctrl.mockChallenge.boilerplateCode[language], jsbOpts));
+        }
 
         function getChallenge(challengeId) {
             //get challenge with ID
@@ -68,10 +84,20 @@ angular.module('challengR.challengePage.controller', ['ngRoute'])
             cppMode = ace.require("ace/mode/javascript").Mode;
             phpMode = ace.require("ace/mode/javascript").Mode;
             pythonMode = ace.require("ace/mode/javascript").Mode;
-            var editor = ace.edit("editor");
+            editor = ace.edit("editor");
             editor.setTheme("ace/theme/twilight");
+            editor.session.setUseWrapMode(true);
+            editor.setHighlightActiveLine(true);
+            ctrl.language = 'Java';
+            ctrl.setLanguage();
         }
 
-        initEditor();
-        getChallenge($routeParams.id);
+        function initPage() {
+            initEditor();
+            getChallenge($routeParams.id);
+        }
+
+        initPage();
+
+        editor.getValue(); // or session.getValue
     }]);

@@ -4,8 +4,15 @@
 
 <div ng-bind="$ctrl.mockChallenge.example"></div>
 
-<div class="button">Clear input</div>
+<div class="button"
+     ng-click="$ctrl.setLanguage();">Clear input</div>
 
-<select ng-options="language as language for language in mockChallenge.languages track by language" ng-model="$ctrl.language" ng-change="$ctrl.setLanguage($ctrl.language)"></select>
+<select class="select select--filter"
+        ng-model="$ctrl.language"
+        ng-change="$ctrl.setLanguage();"
+        ng-options="language as language for language in $ctrl.mockChallenge.languages">
+    <option value="$ctrl.language"></option>
+</select>
 
-<div id="editor">some text</div>
+
+<div id="editor"></div>
