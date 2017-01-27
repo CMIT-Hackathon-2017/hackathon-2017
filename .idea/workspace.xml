@@ -1,20 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1d847c58-ab40-40ad-b98a-792538fbbaac" name="Default" comment="prepare for language-code-pairs">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/components/pages/scoreboardPage.controller.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/components/pages/scoreboardPage.partial.html" />
+    <list default="true" id="1d847c58-ab40-40ad-b98a-792538fbbaac" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.js" afterPath="$PROJECT_DIR$/app/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/components/challengeList/challengeList.partial.html" afterPath="$PROJECT_DIR$/app/components/challengeList/challengeList.partial.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/components/loginComponent/login.partial.html" afterPath="$PROJECT_DIR$/app/components/loginComponent/login.partial.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/components/pages/challengeOverviewPage.partial.html" afterPath="$PROJECT_DIR$/app/components/pages/challengeOverviewPage.partial.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/components/pages/challengePage.controller.js" afterPath="$PROJECT_DIR$/app/components/pages/challengePage.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/components/pages/challengePage.partial.html" afterPath="$PROJECT_DIR$/app/components/pages/challengePage.partial.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/components/pages/loginPage.partial.html" afterPath="$PROJECT_DIR$/app/components/pages/loginPage.partial.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/css/app.css" afterPath="$PROJECT_DIR$/app/css/app.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/css/foundation.css" afterPath="$PROJECT_DIR$/app/css/foundation.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/index.html" afterPath="$PROJECT_DIR$/app/index.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -110,8 +98,8 @@
       <file leaf-file-name="challengePage.controller.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/components/pages/challengePage.controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="85" column="37" lean-forward="false" selection-start-line="85" selection-start-column="37" selection-end-line="85" selection-end-column="37" />
+            <state relative-caret-position="180">
+              <caret line="78" column="10" lean-forward="true" selection-start-line="78" selection-start-column="10" selection-end-line="78" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -720,7 +708,7 @@
       <workItem from="1485472525300" duration="4174000" />
       <workItem from="1485507362308" duration="5596000" />
       <workItem from="1485513006523" duration="3331000" />
-      <workItem from="1485527721607" duration="784000" />
+      <workItem from="1485527721607" duration="929000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1485429553438</created>
@@ -834,11 +822,18 @@
       <option name="project" value="LOCAL" />
       <updated>1485521065416</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="last stuff">
+      <created>1485528519895</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1485528519895</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="51649000" />
+    <option name="totallyTimeSpent" value="51794000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="812" extended-state="6" />
@@ -907,7 +902,8 @@
     <MESSAGE value="save response.data to sessionStorage" />
     <MESSAGE value="getList" />
     <MESSAGE value="prepare for language-code-pairs" />
-    <option name="LAST_COMMIT_MESSAGE" value="prepare for language-code-pairs" />
+    <MESSAGE value="last stuff" />
+    <option name="LAST_COMMIT_MESSAGE" value="last stuff" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1100,6 +1096,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="15" lean-forward="false" selection-start-line="0" selection-start-column="15" selection-end-line="0" selection-end-column="15" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1107,6 +1104,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1192,8 +1190,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/components/pages/challengePage.controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="85" column="37" lean-forward="false" selection-start-line="85" selection-start-column="37" selection-end-line="85" selection-end-column="37" />
+        <state relative-caret-position="180">
+          <caret line="78" column="10" lean-forward="true" selection-start-line="78" selection-start-column="10" selection-end-line="78" selection-end-column="10" />
           <folding />
         </state>
       </provider>
