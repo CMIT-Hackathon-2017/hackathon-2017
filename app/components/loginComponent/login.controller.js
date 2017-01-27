@@ -21,6 +21,8 @@ angular.module('challengR.login.controller', ['ngRoute'])
                 }, function errorCallback(response) {
                     console.log(response);
                 });
+            } else {
+                console.log("invalid password");
             }
         };
     }
