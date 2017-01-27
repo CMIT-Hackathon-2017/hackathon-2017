@@ -1,5 +1,8 @@
 
 
+import com.nordea.hackathon2017.pojo.User;
+import com.nordea.hackathon2017.utils.DatabaseUtil;
+
 import java.sql.SQLException;
 
 /**
@@ -12,11 +15,9 @@ public class TestMain {
     user.setName("Per");
     user.setEmail("pers2@email");
 
-    try {
-      DatabaseUtil.makeConnection("jdbc:postgresql://hack17pg.cscansykgw76.eu-west-1.rds.amazonaws.com:5432/hack17", "HackChal", "hackerton17");
-    } catch (SQLException e) {
-      e.printStackTrace();
-    }
+
+      DatabaseUtil.makeConnection();
+
 
     try {
       DatabaseUtil.insertIntoUsers(user);
