@@ -27,7 +27,7 @@
         <select class="select select--filter"
                 ng-model="$ctrl.language"
                 ng-change="$ctrl.setLanguage();"
-                ng-options="language as language for language in $ctrl.challenge.languages">
+                ng-options="language as language for language in $ctrl.languages">
             <option value="$ctrl.language"></option>
         </select>
     </div>

@@ -62,12 +62,12 @@ angular.module('challengR.challengePage.controller', ['ngRoute'])
                 indent_size : 4
             };
 
-            if(ctrl.challenge.boilerplateCode && ctrl.challenge.boilerplateCode[language]) {
-                session.setValue(js_beautify(ctrl.challenge.boilerplateCode[language], jsbOpts));
+            if(ctrl.challenge.languageCodePairs && ctrl.challenge.languageCodePairs[language]) {
+                session.setValue(js_beautify(ctrl.challenge.languageCodePairs[language], jsbOpts));
             } else {
                 //fallback to Java
                 ctrl.language = 'Java';
-                session.setValue(js_beautify(ctrl.challenge.boilerplateCode['Java'], jsbOpts));
+                session.setValue(js_beautify(ctrl.challenge.languageCodePairs['Java'], jsbOpts));
             }
         }
 
@@ -92,9 +92,7 @@ angular.module('challengR.challengePage.controller', ['ngRoute'])
             }).then(function successCallback(response) {
                 ctrl.challenge = response.data;
 
-                ctrl.challenge.boilerplateCode = {
-                    Java: 'import java.util.HashMap; import java.util.Map; public class Solution {public int[] twoSum(int[] numbers, int target) {Map<Integer, Integer> valueIndex = new HashMap<>();for(int i=0; i<numbers.length; i++) {if(valueIndex.containsKey(target-numbers[i])) {return new int[]{valueIndex.get(target-numbers[i]), i};}valueIndex.put(numbers[i], i);}return new int[]{-1,-1};}}',
-                };
+                ctrl.languages = Object.keys(ctrl.challenge.languageCodePairs);
 
                 ctrl.setLanguage();
 
@@ -104,12 +102,13 @@ angular.module('challengR.challengePage.controller', ['ngRoute'])
                     title: '1. Problem',
                     description: 'Given an array of integers, return indices of the two numbers such that they add up to a specific target. You may assume that each input would have exactly one solution.',
                     sample: 'Given nums = [2, 7, 11, 15], target = 9, Because nums[0] + nums[1] = 2 + 7 = 9, return [0, 1].',
-                    languages: ['Java', 'C#', 'Javascript', 'C++', 'PHP', 'Python'],
+                    languageCodePairs: {
+                        'Java': 'import java.util.HashMap; import java.util.Map; public class Solution {public int[] twoSum(int[] numbers, int target) {Map<Integer, Integer> valueIndex = new HashMap<>();for(int i=0; i<numbers.length; i++) {if(valueIndex.containsKey(target-numbers[i])) {return new int[]{valueIndex.get(target-numbers[i]), i};}valueIndex.put(numbers[i], i);}return new int[]{-1,-1};}}',
+                        'Javascript': 'Javascript boilerplateCode'
+                    }
                 };
 
-                ctrl.challenge.boilerplateCode = {
-                    Java: 'import java.util.HashMap; import java.util.Map; public class Solution {public int[] twoSum(int[] numbers, int target) {Map<Integer, Integer> valueIndex = new HashMap<>();for(int i=0; i<numbers.length; i++) {if(valueIndex.containsKey(target-numbers[i])) {return new int[]{valueIndex.get(target-numbers[i]), i};}valueIndex.put(numbers[i], i);}return new int[]{-1,-1};}}',
-                };
+                ctrl.languages = Object.keys(ctrl.challenge.languageCodePairs);
 
                 ctrl.setLanguage();
             });
