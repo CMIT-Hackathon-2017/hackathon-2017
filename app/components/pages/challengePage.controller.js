@@ -27,7 +27,6 @@ angular.module('challengR.challengePage.controller', ['ngRoute'])
             languages: ['Java', 'C#', 'Javascript', 'C++', 'PHP', 'Python'],
             boilerplateCode: {
                 Java: 'import java.util.HashMap; import java.util.Map; public class Solution {public int[] twoSum(int[] numbers, int target) {Map<Integer, Integer> valueIndex = new HashMap<>();for(int i=0; i<numbers.length; i++) {if(valueIndex.containsKey(target-numbers[i])) {return new int[]{valueIndex.get(target-numbers[i]), i};}valueIndex.put(numbers[i], i);}return new int[]{-1,-1};}}',
-                Javascript: 'This is the Javascript boilerplate code'
             }
         };
 
@@ -70,8 +69,27 @@ angular.module('challengR.challengePage.controller', ['ngRoute'])
             var jsbOpts = {
                 indent_size : 4
             };
-            session.setValue(js_beautify(ctrl.mockChallenge.boilerplateCode[language], jsbOpts));
+
+            if(ctrl.mockChallenge.boilerplateCode[language]) {
+                session.setValue(js_beautify(ctrl.mockChallenge.boilerplateCode[language], jsbOpts));
+            } else {
+                //fallback to Java
+                ctrl.language = 'Java';
+                session.setValue(js_beautify(ctrl.mockChallenge.boilerplateCode['Java'], jsbOpts));
+            }
         }
+
+        ctrl.runCode = function () {
+            var usersCode = editor.getValue();
+
+            //send usersCode to BE and verify with response
+        };
+
+        ctrl.submitCode = function () {
+            var usersCode = editor.getValue();
+
+            //send usersCode to BE and verify with response
+        };
 
         function getChallenge(challengeId) {
             //get challenge with ID
@@ -98,6 +116,4 @@ angular.module('challengR.challengePage.controller', ['ngRoute'])
         }
 
         initPage();
-
-        editor.getValue(); // or session.getValue
     }]);

@@ -16,7 +16,11 @@ angular.module('challengR.login.controller', ['ngRoute'])
                         "email": ctrl.email,
                         "name": ctrl.name
                     }
-                }).then(function successCallback() {
+                }).then(function successCallback(response) {
+                    console.log('got successful response, storing user in sessionStorage:', response);
+
+                    sessionStorage.user = JSON.stringify(response);
+
                     $location.url('/challenges');
                 }, function errorCallback(response) {
                     console.log(response);

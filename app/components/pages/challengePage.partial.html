@@ -1,18 +1,57 @@
-<h1 ng-bind-html="$ctrl.mockChallenge.title"></h1>
+<div class="row">
+    <div class="column">
+        <h1>Welcome to ChallengR, {{$ctrl.user.name}}</h1>
+    </div>
+</div>
 
-<div ng-bind="$ctrl.mockChallenge.description"></div>
+<div class="row">
+    <div class="column">
+        <h1 ng-bind="$ctrl.mockChallenge.title"></h1>
+    </div>
+</div>
 
-<div ng-bind="$ctrl.mockChallenge.example"></div>
+<div class="row">
+    <div class="column">
+        <div ng-bind="$ctrl.mockChallenge.description"></div>
+    </div>
+</div>
 
-<div class="button"
-     ng-click="$ctrl.setLanguage();">Clear input</div>
+<div class="row">
+    <div class="column">
+        <p>Example:</p>
+    </div>
+</div>
 
-<select class="select select--filter"
-        ng-model="$ctrl.language"
-        ng-change="$ctrl.setLanguage();"
-        ng-options="language as language for language in $ctrl.mockChallenge.languages">
-    <option value="$ctrl.language"></option>
-</select>
+<div class="row">
+    <div class="column">
+        <div ng-bind="$ctrl.mockChallenge.example"></div>
+    </div>
+</div>
 
+<div class="row">
+    <div class="column shrink">
+        <select class="select select--filter"
+                ng-model="$ctrl.language"
+                ng-change="$ctrl.setLanguage();"
+                ng-options="language as language for language in $ctrl.mockChallenge.languages">
+            <option value="$ctrl.language"></option>
+        </select>
+    </div>
+    <div class="column __float-left">
+        <div class="button"
+             ng-click="$ctrl.setLanguage();">Clear input</div>
+    </div>
+</div>
 
 <div id="editor"></div>
+
+<div class="row">
+    <div class="column shrink right">
+        <div class="button"
+             ng-click="$ctrl.runCode();">Run code</div>
+    </div>
+    <div class="column right">
+        <div class="button"
+             ng-click="$ctrl.submitCode();">Submit code</div>
+    </div>
+</div>
