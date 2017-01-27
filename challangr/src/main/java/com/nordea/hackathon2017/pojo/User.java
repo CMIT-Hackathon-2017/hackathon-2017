@@ -1,6 +1,8 @@
 package com.nordea.hackathon2017.pojo;
 
-public class User {
+import com.fasterxml.jackson.core.JsonProcessingException;
+
+public class User extends Json {
 
     private int id;
     private String name;
@@ -30,7 +32,12 @@ public class User {
 
     @Override
     public String toString() {
-        return "ID: " + id + ", Name: " + name + ", Email: " + email;
+        try {
+            return mapper.writeValueAsString(this);
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
+        return "{}";
     }
 
 }
