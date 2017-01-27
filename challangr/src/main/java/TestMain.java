@@ -13,15 +13,13 @@ public class TestMain {
   public static void main(String[] args) {
     User user = new User();
     user.setName("Per");
-    user.setEmail("pers2@email");
+    user.setEmail("per4@email");
 
 
       DatabaseUtil.makeConnection();
 
 
     try {
-      DatabaseUtil.insertIntoUsers(user);
-      user.setEmail("new@email");
       DatabaseUtil.insertIntoUsers(user);
     } catch (SQLException e) {
       e.printStackTrace();

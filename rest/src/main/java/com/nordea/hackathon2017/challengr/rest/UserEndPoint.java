@@ -17,8 +17,6 @@ import java.sql.SQLException;
 /**
  * Created by g50135 on 26/01/2017.
  */
-
-
 @Path("/json/userEndPoint")
 public class UserEndPoint {
 
@@ -39,10 +37,10 @@ public class UserEndPoint {
     @Consumes(MediaType.APPLICATION_JSON)
     public Response createUserInJSON(User user) throws SQLException {
         //send user to database check if ok return id error handling
-        //DatabaseUtil.makeConnection();
-        //DatabaseUtil.insertIntoUsers(user);
-       // User dbUser = DatabaseUtil.selectFromUsers(user);
-        String result = user == null ? "{}" : user.toString() ;
+        DatabaseUtil.makeConnection();
+        DatabaseUtil.insertIntoUsers(user);
+        User dbUser = DatabaseUtil.selectFromUsers(user);
+        String result = dbUser == null ? "{}" : dbUser.toString() ;
         return Response.status(201).entity(result).build();
 
     }

@@ -13,6 +13,12 @@ public class DatabaseUtil {
 
   public static void makeConnection(){
     try {
+      Class.forName("org.postgresql.Driver");
+    } catch (ClassNotFoundException e) {
+      e.printStackTrace();
+    }
+
+    try {
       makeConnection("jdbc:postgresql://hack17pg.cscansykgw76.eu-west-1.rds.amazonaws.com:5432/hack17", "HackChal", "hackerton17");
     } catch (SQLException e) {
       e.printStackTrace();
