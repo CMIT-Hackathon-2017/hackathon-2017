@@ -1,3 +1,5 @@
+package com.nordea.hackathon2017.pojo;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
