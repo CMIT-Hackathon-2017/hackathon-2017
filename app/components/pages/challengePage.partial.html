@@ -1,6 +1,7 @@
 <div class="row">
     <div class="column">
-        <h1 ng-bind="::$ctrl.challenge.title"></h1>
+        <h1 class="challenge-headline"
+            ng-bind="::$ctrl.challenge.title"></h1>
     </div>
 </div>
 
@@ -11,18 +12,19 @@
 </div>
 
 <div class="row">
-    <div class="column">
+    <div class="column __margin-top __bold">
         <p>Example:</p>
     </div>
 </div>
 
 <div class="row">
     <div class="column">
-        <div ng-bind="::$ctrl.challenge.example"></div>
+        <div class="content-box"
+             ng-bind="::$ctrl.challenge.sample"></div>
     </div>
 </div>
 
-<div class="row">
+<div class="row __margin-top">
     <div class="column shrink">
         <select class="select select--filter"
                 ng-model="$ctrl.language"
@@ -45,32 +47,34 @@
              ng-click="$ctrl.runCode();">Run code</div>
     </div>
     <div class="column right">
-        <div class="button"
+        <div class="button success"
              ng-click="$ctrl.submitCode();">Submit code</div>
     </div>
 </div>
 
+<h2 ng-if="$ctrl.loading">Loading</h2>
+
 <div class="row" ng-if="$ctrl.displayResults">
-    <div class="column">
+    <div class="column no-float">
         <div class="row">
             <div class="column">
                 <div>Run code result:</div>
             </div>
         </div>
         <div class="row">
-            <div class="column">
+            <div class="column no-float">
                 Your input:
-                <div ng-bind="$ctrl.userInput"></div>
+                <div class="content-box" ng-bind="$ctrl.userInput"></div>
             </div>
         </div>
         <div class="row">
-            <div class="column">
+            <div class="column no-float">
                 Your answer:
-                <div ng-bind="$ctrl.userAnswer"></div>
+                <div class="content-box" ng-bind="$ctrl.userAnswer"></div>
             </div>
-            <div class="column">
+            <div class="column no-float">
                 Expected answer:
-                <div ng-bind="$ctrl.expectedAnswer"></div>
+                <div class="content-box" ng-bind="$ctrl.expectedAnswer"></div>
             </div>
         </div>
     </div>

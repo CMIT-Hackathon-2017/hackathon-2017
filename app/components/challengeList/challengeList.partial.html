@@ -1,4 +1,4 @@
-<div class="row challenge-list" ng-repeat="challenge in $ctrl.challengeList">
+<div class="row" ng-repeat="challenge in $ctrl.challengeList">
     <div class="column shrink"># {{challenge.id}}</div>
     <a class="column" ng-bind="::challenge.title"
        ng-click="$ctrl.openChallenge(challenge.id)"></a>

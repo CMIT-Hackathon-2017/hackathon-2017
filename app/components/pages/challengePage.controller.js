@@ -10,7 +10,7 @@ angular.module('challengR.challengePage.controller', ['ngRoute'])
         });
     }])
 
-    .controller('ChallengePageCtrl', ['$routeParams', '$scope', '$http', function($routeParams, $scope, $http) {
+    .controller('ChallengePageCtrl', ['$routeParams', '$scope', '$http', '$location', function($routeParams, $scope, $http, $location) {
         var ctrl = this,
             javaScriptMode,
             javaMode,
@@ -81,8 +81,9 @@ angular.module('challengR.challengePage.controller', ['ngRoute'])
         ctrl.submitCode = function () {
             var usersCode = editor.getValue();
             ctrl.displayResults = true;
+            ctrl.loading = true;
 
-            //send usersCode to BE and verify with response
+            $location.url('/scoreboard');
         };
 
         function getChallenge(challengeId) {

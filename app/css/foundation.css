@@ -1191,11 +1191,11 @@ select {
       background-color: #9e0c0f;
       color: #fefefe; }
   .button.success {
-    background-color: #5da423;
-    color: #0a0a0a; }
+    background-color: #40BFA3;
+    color: #fefefe; }
     .button.success:hover, .button.success:focus {
-      background-color: #4a831c;
-      color: #0a0a0a; }
+      background-color: #40BFA3;
+      color: #fefefe; }
   .button.warning {
     background-color: #ffae00;
     color: #0a0a0a; }

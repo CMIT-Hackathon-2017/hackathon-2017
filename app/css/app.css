@@ -1,3 +1,59 @@
+@font-face {
+    font-family: "Nordea Sans Large";
+    src: url('../font/NordeaSansLarge-Regular.eot'); /* IE9 Compat Modes */
+    src: url('../font/NordeaSansLarge-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../font/NordeaSansLarge-Regular.woff2') format('woff2'), /* Super Modern Browsers */
+    url('../font/NordeaSansLarge-Regular.woff') format('woff'), /* Pretty Modern Browsers */
+    url('../font/NordeaSansLarge-Regular.ttf')  format('truetype') /* Safari, Android, iOS */
+}
+
+body {
+    background-color: #FDECE4; /* Nordea light pink */
+    font-family: 'Nordea Sans Large', sans-serif;
+}
+
+fieldset {
+    border: none !important;
+}
+
+.challenge-headline {
+    color: #0000A0; /* Nordea blue */
+}
+
+.challenge-list {
+    width: 500px;
+    left: 50%;
+    position: absolute;
+    margin-left: -250px;
+}
+
+.welcome-message {
+    color: #0000A0; /* Nordea blue */
+}
+
+.pulse {
+    height: 60px;
+}
+
+.logo-name {
+    color: white;
+    font-size: 40px;
+}
+
+.logo-holder {
+    float: left !important;
+}
+
+.logo {
+    height: 40px;
+    margin-top: 7px;
+}
+
+.header {
+    height: 60px;
+    background-color: #0000A0;
+}
+
 #editor {
     position: relative;
     width: 100%;
@@ -5,6 +61,43 @@
     margin-bottom: 22px;
 }
 
+.content-box {
+    padding: 11px;
+    background-color: #F0C1AE; /* Nordea dark pink */
+}
+
+.green-stuff {
+    background-color: #40BFA3;
+    color: white;
+}
+
+.no-float {
+    float: none !important;
+}
+
 .__float-left {
     float: left !important;
+}
+
+.__margin-top {
+    margin-top: 22px;
+}
+
+.__bold {
+    font-weight: bold;
+}
+
+.login-wrapper {
+    width: 500px;
+    position: absolute;
+    left: 50%;
+    margin-left: -250px;
+    top: 50%;
+    margin-top: -119px;
+}
+
+.login-headline {
+    text-align: center;
+    float: none !important;
+    color: #0000A0; /* Nordea blue */
 }

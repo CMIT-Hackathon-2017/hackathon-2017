@@ -9,7 +9,8 @@ angular.module('challengR', [
     'challengR.challengeOverviewPage.controller',
     'challengR.challengeList.controller',
     'challengR.challengeList.component',
-    'challengR.challengePage.controller'
+    'challengR.challengePage.controller',
+    'challengR.scoreboardPage.controller'
 
 ]).
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
