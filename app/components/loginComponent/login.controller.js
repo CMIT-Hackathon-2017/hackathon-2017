@@ -7,7 +7,6 @@ angular.module('challengR.login.controller', ['ngRoute'])
         var ctrl = this;
 
         ctrl.verifyLogin = function () {
-
             if(ctrl.password === 'hack17') {
                 $http({
                     method: 'POST',
@@ -17,7 +16,7 @@ angular.module('challengR.login.controller', ['ngRoute'])
                         "name": ctrl.name
                     }
                 }).then(function successCallback(response) {
-                    sessionStorage.user = JSON.stringify(response.data);
+                    localStorage.user = JSON.stringify(response.data);
 
                     $location.url('/challenges');
                 }, function errorCallback(response) {
