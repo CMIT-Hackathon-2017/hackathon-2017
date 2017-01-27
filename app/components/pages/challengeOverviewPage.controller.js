@@ -15,4 +15,6 @@ angular.module('challengR.challengeOverviewPage.controller', ['ngRoute'])
     var ctrl = this;
 
     ctrl.user = JSON.parse(sessionStorage.user);
+
+    console.log(ctrl.user);
 }]);
