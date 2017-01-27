@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/TestRunner/TestRunner.iml" filepath="$PROJECT_DIR$/TestRunner/TestRunner.iml" />
+      <module fileurl="file://$PROJECT_DIR$/challangr/challangr.iml" filepath="$PROJECT_DIR$/challangr/challangr.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/hackathon-2017.iml" filepath="$PROJECT_DIR$/.idea/hackathon-2017.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rest/rest.iml" filepath="$PROJECT_DIR$/rest/rest.iml" />
     </modules>
   </component>
 </project>

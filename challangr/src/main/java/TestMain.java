@@ -1,7 +1,7 @@
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
-import org.hibernate.cfg.Configuration;
+
+
+import com.nordea.hackathon2017.pojo.User;
+import com.nordea.hackathon2017.utils.DatabaseUtil;
 
 import java.sql.SQLException;
 
@@ -13,13 +13,11 @@ public class TestMain {
   public static void main(String[] args) {
     User user = new User();
     user.setName("Per");
-    user.setEmail("per@email");
+    user.setEmail("per4@email");
 
-    try {
-      DatabaseUtil.makeConnection("jdbc:postgresql://hack17pg.cscansykgw76.eu-west-1.rds.amazonaws.com:5432/hack17", "HackChal", "hackerton17");
-    } catch (SQLException e) {
-      e.printStackTrace();
-    }
+
+      DatabaseUtil.makeConnection();
+
 
     try {
       DatabaseUtil.insertIntoUsers(user);
@@ -29,7 +27,7 @@ public class TestMain {
 
 
     try {
-      DatabaseUtil.selectFromUsers(user);
+      System.out.println("Selected user id: " + DatabaseUtil.selectFromUsers(user));
     } catch (SQLException e) {
       e.printStackTrace();
     }
