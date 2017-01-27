@@ -9,7 +9,7 @@ angular.module('challengR.challengeList.controller', ['ngRoute'])
         function getChallenges() {
             $http({
                 method: 'GET',
-                url: 'http://localhost:9080/rest/json/challengeEndPoint/get'
+                url: 'http://localhost:9080/rest/json/challengeEndPoint/getList'
             }).then(function successCallback(response) {
                 ctrl.challengeList = response.data;
 
